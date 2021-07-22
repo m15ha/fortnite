@@ -3,7 +3,9 @@ import React from 'react'
 export default function Shop() {
     return (
         <>
-           <main className="container content"></main> 
+           <main className="container content">
+               Test msg
+               </main> 
         </>
     )
 }
