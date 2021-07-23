@@ -3,11 +3,13 @@ import { API_KEY, API_URL } from '../config';
 import Preloader from './Preloader';
 import GoodsList from './GoodsList';
 import Cart from './Cart';
+import BasketList from './BasketList';
 
 export default function Shop() {
     const [goods, setGoods] = useState([]);
     const [loading, setLoading] = useState([]);
     const [order, setOrder] = useState([]);
+    const [isBasketShow, setIsBasketShow] = useState(false);
 
     const addToBasket = (item) => {
         const itemIndex = order.findIndex(
@@ -36,6 +38,15 @@ export default function Shop() {
         }
     };
 
+    const removeFromBasket = (itemId) => {
+        const newOrder = order.filter((el) => el.id !== itemId);
+        setOrder(newOrder);
+    };
+
+    const handleBasketShow = () => {
+        setIsBasketShow(!isBasketShow);
+    };
+
     useEffect(function getGoods() {
         fetch(API_URL, {
             headers: {
@@ -52,11 +63,21 @@ export default function Shop() {
     return (
         <>
             <main className='container content'>
-                <Cart quantity={order.length} />
+                <Cart
+                    quantity={order.length}
+                    handleBasketShow={handleBasketShow}
+                />
                 {loading ? (
                     <Preloader />
                 ) : (
                     <GoodsList goods={goods} addToBasket={addToBasket} />
+                )}
+                {isBasketShow && (
+                    <BasketList
+                        order={order}
+                        handleBasketShow={handleBasketShow}
+                        removeFromBasket={removeFromBasket}
+                    />
                 )}
             </main>
         </>

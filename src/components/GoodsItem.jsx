@@ -33,7 +33,7 @@ export default function GoodsItem(props) {
                     Buy
                 </button>
                 <span className='right' style={{ fontSize: '1.8rem' }}>
-                    {price}
+                    {price}$
                 </span>
             </div>
         </div>
