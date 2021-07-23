@@ -6,6 +6,8 @@ export default function BasketList(props) {
         order = [],
         handleBasketShow = Function.prototype,
         removeFromBasket = Function.prototype,
+        incQuantity,
+        decQuantity     
     } = props;
 
     const totalPrice = order.reduce((sum, el) => {
@@ -21,6 +23,8 @@ export default function BasketList(props) {
                     <BasketItem
                         key={item.id}
                         removeFromBasket={removeFromBasket}
+                        incQuantity={incQuantity}
+                        decQuantity={decQuantity}
                         {...item}
                     />
                 ))
@@ -30,6 +34,7 @@ export default function BasketList(props) {
 
             <li className='collection-item active light-blue darken-1'>
                 Total: {totalPrice}$
+                <span className="secondary-content">Checkout</span>
             </li>
             <i
                 className='material-icons basket-close'

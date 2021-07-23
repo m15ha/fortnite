@@ -57,9 +57,6 @@ label:not(:last-child) {
     }
 }
 
-.cart-quantity {
-}
-
 .basket-list {
     position: fixed;
     top: 50%;
@@ -81,11 +78,12 @@ label:not(:last-child) {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    color: white;   
+    color: white;
 }
 
 .basket-delete {
     cursor: pointer;
+    color: #039be5 ;
 }
 
 @keyframes show {
@@ -102,7 +100,7 @@ label:not(:last-child) {
 .basket-quantity {
     cursor: pointer;
     vertical-align: middle;
-    color: #26a69a;
+    color: red;
 }
 
 #toast-container {

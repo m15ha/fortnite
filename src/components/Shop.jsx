@@ -4,12 +4,14 @@ import Preloader from './Preloader';
 import GoodsList from './GoodsList';
 import Cart from './Cart';
 import BasketList from './BasketList';
+import Alert from './Alert';
 
 export default function Shop() {
     const [goods, setGoods] = useState([]);
     const [loading, setLoading] = useState([]);
     const [order, setOrder] = useState([]);
     const [isBasketShow, setIsBasketShow] = useState(false);
+    const [alertName, setAlertName] = useState('');
 
     const addToBasket = (item) => {
         const itemIndex = order.findIndex(
@@ -36,7 +38,38 @@ export default function Shop() {
 
             setOrder(newOrder);
         }
+        setAlertName(item.name)
     };
+
+    const incQuantity = (itemId) => {
+        const newOrder = order.map (el => {
+            if (el.id === itemId) {
+                const newQuantity = el.quantity + 1;
+                return {
+                    ...el,
+                    quantity: newQuantity
+                }
+            } else {
+                return el
+            }
+        })
+        setOrder(newOrder)
+    }
+
+    const decQuantity = (itemId) => {
+        const newOrder = order.map (el => {
+            if (el.id === itemId) {
+                const newQuantity = el.quantity - 1;
+                return {
+                    ...el,
+                    quantity: newQuantity >= 0 ? newQuantity : 0
+                }
+            } else {
+                return el
+            }
+        })
+        setOrder(newOrder)
+    }
 
     const removeFromBasket = (itemId) => {
         const newOrder = order.filter((el) => el.id !== itemId);
@@ -46,6 +79,10 @@ export default function Shop() {
     const handleBasketShow = () => {
         setIsBasketShow(!isBasketShow);
     };
+
+    const closeAlert = () => {
+        setAlertName ('')
+    }
 
     useEffect(function getGoods() {
         fetch(API_URL, {
@@ -77,8 +114,11 @@ export default function Shop() {
                         order={order}
                         handleBasketShow={handleBasketShow}
                         removeFromBasket={removeFromBasket}
+                        incQuantity={incQuantity}
+                        decQuantity={decQuantity}
                     />
                 )}
+                {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
             </main>
         </>
     );

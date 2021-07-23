@@ -7,7 +7,7 @@ export default function GoodsItem(props) {
         description,
         price,
         full_background,
-        addToBasket = Function.prototype,
+        addToBasket = Function.prototype
     } = props;
 
     return (
