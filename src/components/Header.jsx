@@ -15,7 +15,7 @@ export default function Header() {
                         <a href='!#'>About</a>
                     </li>
                     <li>
-                        <a href='https://github.com/m15ha/fortnite'>Repo</a>
+                        <a href='https://github.com/m15ha/fortnite'>Github</a>
                     </li>
                 </ul>
             </div>
