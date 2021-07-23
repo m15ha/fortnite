@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.81b7ca10.chunk.css",
-    "main.js": "/static/js/main.6552cc1c.chunk.js",
-    "main.js.map": "/static/js/main.6552cc1c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f7ee6a04.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f7ee6a04.js.map",
-    "static/js/2.24b7bf8a.chunk.js": "/static/js/2.24b7bf8a.chunk.js",
-    "static/js/2.24b7bf8a.chunk.js.map": "/static/js/2.24b7bf8a.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.81b7ca10.chunk.css.map": "/static/css/main.81b7ca10.chunk.css.map",
-    "static/js/2.24b7bf8a.chunk.js.LICENSE.txt": "/static/js/2.24b7bf8a.chunk.js.LICENSE.txt"
+    "main.css": "/fortnite/static/css/main.81b7ca10.chunk.css",
+    "main.js": "/fortnite/static/js/main.6552cc1c.chunk.js",
+    "main.js.map": "/fortnite/static/js/main.6552cc1c.chunk.js.map",
+    "runtime-main.js": "/fortnite/static/js/runtime-main.aa687c02.js",
+    "runtime-main.js.map": "/fortnite/static/js/runtime-main.aa687c02.js.map",
+    "static/js/2.24b7bf8a.chunk.js": "/fortnite/static/js/2.24b7bf8a.chunk.js",
+    "static/js/2.24b7bf8a.chunk.js.map": "/fortnite/static/js/2.24b7bf8a.chunk.js.map",
+    "index.html": "/fortnite/index.html",
+    "static/css/main.81b7ca10.chunk.css.map": "/fortnite/static/css/main.81b7ca10.chunk.css.map",
+    "static/js/2.24b7bf8a.chunk.js.LICENSE.txt": "/fortnite/static/js/2.24b7bf8a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f7ee6a04.js",
+    "static/js/runtime-main.aa687c02.js",
     "static/js/2.24b7bf8a.chunk.js",
     "static/css/main.81b7ca10.chunk.css",
     "static/js/main.6552cc1c.chunk.js"
