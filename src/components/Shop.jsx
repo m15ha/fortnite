@@ -5,7 +5,7 @@ import GoodsList from './GoodsList';
 import Cart from './Cart';
 import BasketList from './BasketList';
 import Alert from './Alert';
-import { ShopContext } from '../context';
+// import { ShopContext } from '../context';
 
 export default function Shop() {
     const [goods, setGoods] = useState([]);
@@ -13,8 +13,6 @@ export default function Shop() {
     const [order, setOrder] = useState([]);
     const [isBasketShow, setIsBasketShow] = useState(false);
     const [alertName, setAlertName] = useState('');
-
-    const { value } = useContext(ShopContext);
 
     const addToBasket = (item) => {
         const itemIndex = order.findIndex(
