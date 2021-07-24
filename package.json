@@ -1,6 +1,6 @@
 {
   "name": "fortnite",
-  "home": "https://m15ha.github.io/fortnite/", 
+  "homepage": "https://m15ha.github.io/fortnite", 
   "version": "0.1.0",
   "private": true,
   "dependencies": {
