@@ -35,6 +35,10 @@ export const ContextProvider = ({ children }) => {
         dispatch({type: 'TOGGLE_BASKET'})
     }
 
+    value.setGoods = (data) => {
+        dispatch({type: 'SET_GOODS', payload: data})
+    }
+
     value.removeFromBasket = (itemId) => {
         dispatch({type: 'REMOTE_FROM_BASKET', payload: {id: itemId}})
     }
