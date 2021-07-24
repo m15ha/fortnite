@@ -5,6 +5,7 @@ import GoodsList from './GoodsList';
 import Cart from './Cart';
 import BasketList from './BasketList';
 import Alert from './Alert';
+import { ShopContext } from '../context';
 
 export default function Shop() {
     const [goods, setGoods] = useState([]);
@@ -12,6 +13,8 @@ export default function Shop() {
     const [order, setOrder] = useState([]);
     const [isBasketShow, setIsBasketShow] = useState(false);
     const [alertName, setAlertName] = useState('');
+
+    const { value } = useContext(ShopContext);
 
     const addToBasket = (item) => {
         const itemIndex = order.findIndex(
@@ -38,38 +41,38 @@ export default function Shop() {
 
             setOrder(newOrder);
         }
-        setAlertName(item.name)
+        setAlertName(item.name);
     };
 
     const incQuantity = (itemId) => {
-        const newOrder = order.map (el => {
+        const newOrder = order.map((el) => {
             if (el.id === itemId) {
                 const newQuantity = el.quantity + 1;
                 return {
                     ...el,
-                    quantity: newQuantity
-                }
+                    quantity: newQuantity,
+                };
             } else {
-                return el
+                return el;
             }
-        })
-        setOrder(newOrder)
-    }
+        });
+        setOrder(newOrder);
+    };
 
     const decQuantity = (itemId) => {
-        const newOrder = order.map (el => {
+        const newOrder = order.map((el) => {
             if (el.id === itemId) {
                 const newQuantity = el.quantity - 1;
                 return {
                     ...el,
-                    quantity: newQuantity >= 0 ? newQuantity : 0
-                }
+                    quantity: newQuantity >= 0 ? newQuantity : 0,
+                };
             } else {
-                return el
+                return el;
             }
-        })
-        setOrder(newOrder)
-    }
+        });
+        setOrder(newOrder);
+    };
 
     const removeFromBasket = (itemId) => {
         const newOrder = order.filter((el) => el.id !== itemId);
@@ -81,8 +84,8 @@ export default function Shop() {
     };
 
     const closeAlert = () => {
-        setAlertName ('')
-    }
+        setAlertName('');
+    };
 
     useEffect(function getGoods() {
         fetch(API_URL, {
@@ -118,7 +121,9 @@ export default function Shop() {
                         decQuantity={decQuantity}
                     />
                 )}
-                {alertName && <Alert name={alertName} closeAlert={closeAlert} />}
+                {alertName && (
+                    <Alert name={alertName} closeAlert={closeAlert} />
+                )}
             </main>
         </>
     );
